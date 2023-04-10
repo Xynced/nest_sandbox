@@ -1,0 +1,48 @@
+{
+  "name": "nest_sandbox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@nestjs/common": "^7.0.5",
+    "@nestjs/core": "^7.0.5",
+    "@nestjs/microservices": "^7.0.5",
+    "@nestjs/platform-express": "^7.0.5",
+    "@nestjs/swagger": "^4.4.0",
+    "@nestjs/testing": "^7.0.5",
+    "class-transformer": "^0.2.3",
+    "class-validator": "^0.11.1",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.5.5",
+    "slug": "^1.1.0",
+    "swagger-ui-express": "^4.1.4",
+    "sequelize": "^6.31.0",
+    "typescript": "^5.0.4",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "@types/node": "^13.13.4",
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
+    "@typescript-eslint/parser": "^5.58.0",
+    "atob": ">=2.1.0",
+    "deep-extend": ">=0.5.1",
+    "eslint": "^8.38.0",
+    "eslint-config-standard-with-typescript": "^34.0.1",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "extend": ">=3.0.2",
+    "jest": "^25.5.3",
+    "nodemon": "^1.19.4",
+    "supertest": "^3.4.2",
+    "ts-jest": "^25.4.0",
+    "ts-node": "^8.9.1"
+  },
+  "keywords": [],
+  "author": "xynced",
+  "license": "ISC"
+}
