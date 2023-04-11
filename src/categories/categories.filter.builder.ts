@@ -8,7 +8,8 @@ export class CategoriesFilterBuilder {
 
     #filter = {
         where: {},
-        limit: 2
+        limit: 2,
+        replacements: {}
     }
     #page = 0;
 
@@ -66,9 +67,9 @@ export class CategoriesFilterBuilder {
     }
 
     #addTextSearch(value, field) {
-        // TODO test after move to postgresql. Looks lime sqlite not support fulltext search with matches
-        // this.#filter.where[field] = { [Op.match]: this.#handleUmlaut(value) }
-        this.#filter.where[field] = { [Op.like]: `%${this.#handleUmlaut(value)}%` };
+        const replacementName = field + 'Replacement';
+        this.#filter.replacements[replacementName] = this.#handleUmlaut(value);
+        this.#filter.where[field] = { [Op.regexp]: `:${replacementName}` };
     }
 
     #handleUmlaut(value) {
