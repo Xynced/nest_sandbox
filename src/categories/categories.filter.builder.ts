@@ -40,7 +40,7 @@ export class CategoriesFilterBuilder {
 
     active(value) {
         if(typeof value === 'undefined') return this;
-        this.#filter.where['active'] = !!value;
+        this.#filter.where['active'] = value.toLowerCase() === 'true';
         return this;
     }
 

@@ -1,4 +1,4 @@
-import {IsBoolean, IsIn, IsInt, IsOptional, IsString, Max, Min} from 'class-validator';
+import {IsBooleanString, IsIn, IsInt, IsOptional, IsString, Max, Min} from 'class-validator';
 import {Type} from 'class-transformer';
 import {Category} from "../../models/category";
 
@@ -19,8 +19,7 @@ export class GetCategoriesDto {
     readonly description: string;
 
     @IsOptional()
-    @Type(() => Boolean)
-    @IsBoolean()
+    @IsBooleanString()
     readonly active: boolean;
 
     @IsOptional()

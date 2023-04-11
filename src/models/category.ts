@@ -1,4 +1,4 @@
-import {CreateOptions, DataTypes, Model, Sequelize} from "sequelize";
+import {DataTypes, Model, Sequelize} from "sequelize";
 import {HookReturn} from "sequelize/types/hooks";
 const sequelize = new Sequelize('sqlite::memory:');
 
