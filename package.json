@@ -21,8 +21,7 @@
     "sequelize-fulltext-search": "^4.22.6",
     "slug": "^1.1.0",
     "sqlite3": "^5.1.6",
-    "swagger-ui-express": "^4.1.4",
-    "typescript": "^5.0.4"
+    "swagger-ui-express": "^4.1.4"
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",
@@ -37,11 +36,12 @@
     "eslint-plugin-n": "^15.7.0",
     "eslint-plugin-promise": "^6.1.1",
     "extend": ">=3.0.2",
-    "jest": "^25.5.3",
+    "jest": "^25.5.4",
     "nodemon": "^1.19.4",
     "supertest": "^3.4.2",
     "ts-jest": "^25.4.0",
-    "ts-node": "^8.9.1"
+    "ts-node": "^8.9.1",
+    "typescript": "^5.0.4"
   },
   "keywords": [],
   "author": "xynced",
