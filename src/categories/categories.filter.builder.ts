@@ -1,4 +1,5 @@
 import { Op } from "sequelize";
+import {CheckDefined} from "../utils/filter.builder.decorator";
 
 export class CategoriesFilterBuilder {
     static init() {
@@ -17,22 +18,22 @@ export class CategoriesFilterBuilder {
         return this.#filter;
     }
 
+    @CheckDefined()
     name(value) {
-        if (!value) return this;
         if (this.#isSearchPredicateActive()) return this;
         this.#addTextSearch(value, 'name');
         return this;
     }
 
+    @CheckDefined()
     description(value) {
-        if (!value) return this;
         if (this.#isSearchPredicateActive()) return this;
         this.#addTextSearch(value, 'description');
         return this;
     }
 
+    @CheckDefined()
     search(value) {
-        if (!value) return this;
         this.#addTextSearch(value, 'name');
         this.#addTextSearch(value, 'description');
         return this;
@@ -44,15 +45,15 @@ export class CategoriesFilterBuilder {
         return this;
     }
 
+    @CheckDefined()
     sort(value) {
-        if (!value) return this;
         const order = (value.startsWith('-')) ? 'DESC' : 'ASC';
         this.#filter['order'] = [[value.replace('-', ''), order]];
         return this;
     }
 
+    @CheckDefined()
     pageSize(value) {
-        if (!value) return this;
         this.#filter.limit = value;
         return this;
     }
