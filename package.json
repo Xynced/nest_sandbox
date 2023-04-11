@@ -17,11 +17,12 @@
     "class-validator": "^0.11.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.5.5",
-    "slug": "^1.1.0",
-    "swagger-ui-express": "^4.1.4",
     "sequelize": "^6.31.0",
-    "typescript": "^5.0.4",
-    "sqlite3": "^5.1.6"
+    "sequelize-fulltext-search": "^4.22.6",
+    "slug": "^1.1.0",
+    "sqlite3": "^5.1.6",
+    "swagger-ui-express": "^4.1.4",
+    "typescript": "^5.0.4"
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",

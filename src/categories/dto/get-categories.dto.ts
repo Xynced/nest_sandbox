@@ -19,8 +19,9 @@ export class GetCategoriesDto {
     readonly description: string;
 
     @IsOptional()
+    @Type(() => Boolean)
     @IsBoolean()
-    readonly active: string;
+    readonly active: boolean;
 
     @IsOptional()
     @IsString()

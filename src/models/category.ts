@@ -36,7 +36,16 @@ Category.init({
     indexes: [
         {
             unique: true,
+            using: 'HASH',
             fields: ['slug']
+        },
+        {
+            type: 'FULLTEXT',
+            fields: ['name']
+        },
+        {
+            type: 'FULLTEXT',
+            fields: ['description']
         }
     ],
     hooks: {

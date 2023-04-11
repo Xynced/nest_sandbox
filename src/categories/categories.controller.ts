@@ -18,7 +18,7 @@ export class CategoriesController {
     }
 
     @Get('category/:id')
-    async findOne(
+    async findByPk(
         @Param('id') id: number
     ){
         await this.categoriesService.findById(id);
