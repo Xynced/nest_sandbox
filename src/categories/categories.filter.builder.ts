@@ -67,6 +67,7 @@ export class CategoriesFilterBuilder {
     }
 
     #addTextSearch(value, field) {
+        // TODO regexp search also didn't work with sqlite. Should connect postgresql in future
         const replacementName = field + 'Replacement';
         this.#filter.replacements[replacementName] = this.#handleUmlaut(value);
         this.#filter.where[field] = { [Op.regexp]: `:${replacementName}` };
