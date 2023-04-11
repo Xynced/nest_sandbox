@@ -1,26 +1,32 @@
-import {Injectable} from '@nestjs/common';
+import {BadRequestException, Injectable} from '@nestjs/common';
 import {Category} from "../models/category";
 import {CreateCategoryDto} from "./dto/create-category.dto";
 import {UpdateCategoryDto} from "./dto/update-category.dto";
 import {GetCategoriesDto} from "./dto/get-categories.dto";
 import {CategoriesFilterBuilder} from "./categories.filter.builder";
+import {Catch} from "../utils/catch.decorator";
 
 @Injectable()
 export class CategoriesService {
+    @Catch(
+        'SequelizeUniqueConstraintError',
+        () => {
+            throw new BadRequestException('Category with current slug already exist');
+        })
     async create(data: CreateCategoryDto) {
         return Category.create({ ...data });
     }
 
     async update(id: number, data: UpdateCategoryDto): Promise<Category> {
         const category = await Category.findByPk(id);
-        if (!category) throw new Error('Category not found');
+        if (!category) throw new BadRequestException('Category not found');
         await category.update(data);
         return category;
     }
 
     async delete(id: number) {
         const category = await Category.findByPk(id);
-        if (!category) throw new Error('Category not found');
+        if (!category) throw new BadRequestException('Category not found');
         await category.destroy();
     }
 
@@ -46,7 +52,6 @@ export class CategoriesService {
             .pageSize(filter.pageSize)
             .build();
 
-        console.log(options);
         return Category.findAll(options);
     }
 }
